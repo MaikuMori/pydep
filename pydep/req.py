@@ -124,7 +124,7 @@ class SetupToolsRequirement(object):
                        '--build',  tmp_dir,
                        '--no-clean', '--no-deps',
                        '--no-binary', ':all:', str(self.req)]
-                subprocess.check_call(cmd, stdout=devnull, stderr=devnull)
+                subprocess.check_call(cmd)
             except Exception as e:
                 shutil.rmtree(tmp_dir)
                 return 'error downloading requirement: %s' % str(e)
